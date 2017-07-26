@@ -1,0 +1,151 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/mvalentino/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="honukai"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git git-flow)
+
+# User configuration
+
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mvalentino/bin"
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#export NVM_DIR="/Users/mvalentino/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#export AWS_REGION="us-west-2"
+#export PATH=$PATH:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+#eval "$(rbenv init -)"
+
+# Bash-Powerline
+#source ~/.bash-powerline.sh
+
+
+
+# ----------------------------------------------------------
+# Common
+# ----------------------------------------------------------
+alias nectar='ssh -i ~/.ssh/internet-tech-key-69.pem ubuntu@130.56.248.52'
+alias comp90041='sshpass -p "jGI5gQHf" ssh mvalentino@nutmeg.eng.unimelb.edu.au'
+alias comp90024='sshpass -p "[].0.w.4" ssh mvalentino@spartan.hpc.unimelb.edu.au'
+alias amost-server='ssh -i ~/.ssh/amost-1-private.pem ubuntu@115.146.92.156'
+alias nectar-couchdb='ssh -i ~/.ssh/nectar-personal.key -f -L localhost:16984:127.0.0.1:5984 ubuntu@115.148.92.156 -N'
+alias nectar-personal='ssh -i ~/.ssh/nectar-personal.key ubuntu@115.146.94.121'
+alias homepi='sshpass -p "[].0.w.4" ssh pi@10.0.0.9'
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+source /usr/local/bin/virtualenvwrapper.sh
+export NVM_DIR="$HOME/.nvm"
+
+# TheBabyClub FB Competition
+export DATABASE_URL="postgresql://localhost:5432/fb_competition"
+export S3_KEY="AKIAJHWNPLWQ6IZJUZVA"
+export S3_SECRET="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"
+export S3_BUCKET="thebabyclub-fb-competition/pram-design-staging"
+export S3_URL="https://thebabyclub-fb-competition.s3.amazonaws.com/pram-design-staging/"
+export ADMIN_USERNAME="admin"
+export ADMIN_PASSWORD="password"
+#export MONGODB_URI="mongodb://scavex-db:@scavex-db.documents.azure.com:10250/?ssl=true"
+export MONGODB_URI="mongodb://localhost:32768/scavex"
+
+# CCC Twitter Analytics configuration
+export COUCHDB_TWEETS='http://127.0.0.1:15984/tweets/'
+export COUCHDB_TWEET_WORDS='http://127.0.0.1:15984/twitter-words/'
+export COUCHDB_TWEET_HASHTAGS='http://127.0.0.1:15984/twitter-hashtags/'
+export COUCHDB_TWEET_USERS='http://127.0.0.1:15984/twitter-users/'
+export COUCHDB_AURIN_DATA='http://127.0.0.1:15984/aurindata'
+
+# Others
+export INSTAGRAM_WALL_TOKEN='32132681.fc1297a.d7eddf2595724f5d868b0338ee0dbfe7'
+
+# AWS KEY
+export AWS_ACCESS_KEY_ID='AKIAJOY274RSQ3LUUY6Q'
+export AWS_SECRET_ACCESS_KEY='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'
+
+autoload bashcompinit && bashcompinit
+source '/Users/mvalentino/lib/azure-cli/az.completion'
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# use brew vim if present
+/usr/local/bin/vim --version > /dev/null 2>&1
+BREW_VIM_INSTALLED=$?  
+if [ $BREW_VIM_INSTALLED -eq 0 ]; then  
+  alias vi="/usr/local/bin/vim"
+fi  
+export PATH="/usr/local/sbin:$PATH"
