@@ -1,7 +1,7 @@
 set nocompatible
-syntax on
+syntax enable
 filetype plugin indent on
-
+set clipboard=unnamed
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,7 +16,6 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
@@ -28,12 +27,17 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'ervandew/supertab'
 Plugin 'eagletmt/neco-ghc'
+Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nbouscal/vim-stylish-haskell'
+Plugin 'mattn/emmet-vim'
 call vundle#end()
 
 set nobackup
 set noswapfile
 
-colorscheme molokai
+colorscheme gruvbox
+set background=dark
 
 " SPACE AND TABS
 set tabstop=2		" number of visual spaces per TAB
@@ -113,3 +117,24 @@ endif
 
 let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" Custom ignore for ctrl-p
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
+" Ignore html in syntastic since it doesn't handle handlebars
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+" Don't require saving a buffer before switching buffers
+set hidden
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+nmap <leader>1 :set lines=40 columns=85<CR><C-w>o
+nmap <leader>2 :set lines=50 columns=171<CR><C-w>v
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
