@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'morhetz/gruvbox'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
