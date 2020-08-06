@@ -1,8 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.fastlane/bin:$PATH"
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-export PATH="$HOME/Documents/Github/git-fuzzy/bin:$PATH"
+export PATH="$HOME/Documents/Github/git-fuzzy/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/code/git-fuzzy/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export TERM="xterm-256color"
@@ -30,15 +28,15 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
-  zsh-completions
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+  asdf
+  dotenv
+  git
+  zsh-interactive-cd
 )
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
+source ~/.local/bin/tmuxinator.zsh
 
 
 # You may need to manually set your language environment
@@ -65,8 +63,8 @@ alias vtop="vtop --theme monokai"
 alias tx="tmuxinator"
 alias pcli="perform-cli"
 alias bfr=$HOME/code/cultureamp/big-frontend-repo/bin/cli
-alias ls="exa -abhl"
-source /usr/local/bin/virtualenvwrapper.sh
+alias ls="exa -bhl"
+alias cat="batcat"
 
 # Git Fuzzy Alias
 alias gs="git fuzzy status"
@@ -98,14 +96,10 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+ZSH_THEME="spaceship"
+
 export NVIM_COC_LOG_LEVEL=debug
 export PATH="/usr/local/sbin:$PATH"
-
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
-export LOGLVL=DEBUG
 
 # Git Fuzzy
 export GIT_FUZZY_STATUS_ADD_KEY=Ctrl-S
@@ -121,3 +115,5 @@ export GF_DIFF_COMMIT_PREVIEW_DEFAULTS="--patch-with-stat"
 export GF_DIFF_COMMIT_RANGE_PREVIEW_DEFAULTS="--summary"
 # when diffing individual files
 export GF_DIFF_FILE_PREVIEW_DEFAULTS="--indent-heuristic"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
