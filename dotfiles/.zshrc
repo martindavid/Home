@@ -23,19 +23,17 @@ ZSH_THEME="spaceship"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
-  zsh-completions
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+  direnv
+  zsh-autosuggestions
+  zsh-interactive-cd
 )
-autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
@@ -65,8 +63,7 @@ alias vtop="vtop --theme monokai"
 alias tx="tmuxinator"
 alias pcli="perform-cli"
 alias bfr=$HOME/code/cultureamp/big-frontend-repo/bin/cli
-alias ls="exa -abhl"
-source /usr/local/bin/virtualenvwrapper.sh
+alias ls="exa -bhl"
 
 # Git Fuzzy Alias
 alias gs="git fuzzy status"
@@ -105,7 +102,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
-export LOGLVL=DEBUG
+export LOGLVL=ERROR
 
 # Git Fuzzy
 export GIT_FUZZY_STATUS_ADD_KEY=Ctrl-S
@@ -121,3 +118,16 @@ export GF_DIFF_COMMIT_PREVIEW_DEFAULTS="--patch-with-stat"
 export GF_DIFF_COMMIT_RANGE_PREVIEW_DEFAULTS="--summary"
 # when diffing individual files
 export GF_DIFF_FILE_PREVIEW_DEFAULTS="--indent-heuristic"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Prevent homebrew to no update everything when you run brew upgrade <package>.
+# Only works on osx
+export HOMEBREW_NO_INSTALL_CLEANUP=true
+
+# Tell fzf to use ripgrep by default
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 30% --border'
+fi
+
