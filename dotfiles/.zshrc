@@ -1,8 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.fastlane/bin:$PATH"
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-export PATH="$HOME/Documents/Github/git-fuzzy/bin:$PATH"
+export PATH="$HOME/Documents/Github/git-fuzzy/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/code/git-fuzzy/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export TERM="xterm-256color"
@@ -33,10 +31,12 @@ plugins=(
   direnv
   zsh-autosuggestions
   zsh-interactive-cd
+  asdf
+  git
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
+source ~/.local/bin/tmuxinator.zsh
 
 
 # You may need to manually set your language environment
@@ -95,8 +95,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+ZSH_THEME="spaceship"
+
 export NVIM_COC_LOG_LEVEL=debug
 export PATH="/usr/local/sbin:$PATH"
 
