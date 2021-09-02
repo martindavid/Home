@@ -36,7 +36,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.local/bin/tmuxinator.zsh
+# source ~/.local/bin/tmuxinator.zsh
 
 
 # You may need to manually set your language environment
@@ -70,7 +70,7 @@ alias gs="git fuzzy status"
 alias gd="git fuzzy diff"
 alias glog="git fuzzy log"
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
 export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
 
@@ -91,8 +91,8 @@ export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export WORKON_HOME=$HOME/.virtualenvs
 
 # Configure pyenv to autoload the virtualenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Set Spaceship ZSH as a prompt
 ZSH_THEME="spaceship"
