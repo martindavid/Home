@@ -479,6 +479,50 @@
             }
           }
         }
+      },
+      "pyenv": {
+        "version": "2.3.13",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_ventura": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:beea55c96989f84f1b804b63f1612b0b899a0d4f2011f9ecfae4e73d90f92fc1",
+              "sha256": "beea55c96989f84f1b804b63f1612b0b899a0d4f2011f9ecfae4e73d90f92fc1"
+            },
+            "arm64_monterey": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:f0f23b8562cee015f0e8c69f73228638bbe78b57ee03a0bf67fc055f2f5fdf99",
+              "sha256": "f0f23b8562cee015f0e8c69f73228638bbe78b57ee03a0bf67fc055f2f5fdf99"
+            },
+            "arm64_big_sur": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:2b34ade9cfb53fff88a38df4e5713afed38ef1bc0ac106dc2aa882594055a5a0",
+              "sha256": "2b34ade9cfb53fff88a38df4e5713afed38ef1bc0ac106dc2aa882594055a5a0"
+            },
+            "ventura": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:35b2d29269ba890bea675e95ed110a76efd97ce85c5bf06ab1453216d2a38dce",
+              "sha256": "35b2d29269ba890bea675e95ed110a76efd97ce85c5bf06ab1453216d2a38dce"
+            },
+            "monterey": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:11c51f2f20084cbf5d022077712245a4cb89779e0a4f982a5f0002991512b4d2",
+              "sha256": "11c51f2f20084cbf5d022077712245a4cb89779e0a4f982a5f0002991512b4d2"
+            },
+            "big_sur": {
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:be30d5ce494bec31c5ec01126b47867abfa9fda59753d438c0260a683af157d3",
+              "sha256": "be30d5ce494bec31c5ec01126b47867abfa9fda59753d438c0260a683af157d3"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/pyenv/blobs/sha256:78c314a1fe30a8df290b30ebe008f03c38099515f8c11feca506f273b2a3a2cf",
+              "sha256": "78c314a1fe30a8df290b30ebe008f03c38099515f8c11feca506f273b2a3a2cf"
+            }
+          }
+        }
       }
     }
   },
