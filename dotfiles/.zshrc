@@ -1,14 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/Documents/Github/git-fuzzy/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$PATH"
-export PATH="$HOME/code/git-fuzzy/bin:$PATH"
+export PATH="$HOME/Documents/Github/git-fuzzy/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/sbin/:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export TERM="xterm-256color"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export TERM="screen-256color"
 
 export DISABLE_AUTO_TITLE=true
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -31,18 +27,19 @@ plugins=(
   direnv
   zsh-autosuggestions
   zsh-interactive-cd
+  poetry
   asdf
-  git
+  gitfast
 )
 
 source $ZSH/oh-my-zsh.sh
-# source ~/.local/bin/tmuxinator.zsh
+source ~/.bin/tmuxinator.zsh
 
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR="nvim"
+export EDITOR="lvim"
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
@@ -52,8 +49,9 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias nvim="lvim"
+alias zshconfig="lvim ~/.zshrc"
+alias ohmyzsh="lvim ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
 alias gitfolder="cd ~/Documents/Github"
 alias rmstopcontainer="docker ps -aq --no-trunc -f status=exited | xargs docker rm"
@@ -62,23 +60,31 @@ alias kraken='open -na GitKraken --args -p "$(git rev-parse --show-toplevel)"'
 alias vtop="vtop --theme monokai"
 alias tx="tmuxinator"
 alias pcli="perform-cli"
-alias bfr=$HOME/code/cultureamp/big-frontend-repo/bin/cli
-alias ls="exa -bhl"
+alias ll="exa -bhl --color always --icons -a -s type"
+alias ls="exa -G --color auto --icons -a -s type"
+alias dockersize='docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}" | sort -k 2 -h'
+# delete known_host for cultureamp ssh server
+alias rmkh="sed -i '' '/cultureamp\.io/d' $HOME/.ssh/known_hosts"
+alias checkstandardrb='bundle exec standardrb --fix $(git diff --name-only --diff-filter=d `git merge-base origin/master HEAD` | grep -E "(\.rb|^Gemfile)$" )'
+alias ".."="cd .."
+alias "..."="cd ../.."
+alias "...."="cd ../../.."
+alias "....."="cd ../../../.."
+
+if [ "$(command -v bat)" ]; then
+  unalias -m 'cat'
+  alias cat='bat -pp --theme="Nord"'
+fi
 
 # Git Fuzzy Alias
 alias gs="git fuzzy status"
 alias gd="git fuzzy diff"
 alias glog="git fuzzy log"
 
-# . $HOME/.asdf/asdf.sh
-
-export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
 
 # Powerlevel9k config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv nvm dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-## Color
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=107
 POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
 POWERLEVEL9K_VCS_FOREGROUND='021'
@@ -86,22 +92,15 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="\n "
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX=">"
 
-
+# Pyenv Config
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export WORKON_HOME=$HOME/.virtualenvs
-
 # Configure pyenv to autoload the virtualenv
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 
-# Set Spaceship ZSH as a prompt
-ZSH_THEME="spaceship"
-
-export NVIM_COC_LOG_LEVEL=debug
-export PATH="/usr/local/sbin:$PATH"
 
 # Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
 export LOGLVL=ERROR
 
 # Git Fuzzy
@@ -119,8 +118,6 @@ export GF_DIFF_COMMIT_RANGE_PREVIEW_DEFAULTS="--summary"
 # when diffing individual files
 export GF_DIFF_FILE_PREVIEW_DEFAULTS="--indent-heuristic"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Prevent homebrew to no update everything when you run brew upgrade <package>.
 # Only works on osx
 export HOMEBREW_NO_INSTALL_CLEANUP=true
@@ -131,3 +128,37 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 30% --border'
 fi
 
+# Custom exec
+source ~/.token-env
+source ~/.fonts/*.sh
+eval "$(direnv hook zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+
+# Git Fuzzy
+GIT_FUZZY_STATUS_ADD_KEY=Ctrl-S
+GIT_FUZZY_STATUS_EDIT_KEY=Ctrl-E
+GIT_FUZZY_STATUS_COMMIT_KEY=Ctrl-C
+GIT_FUZZY_STATUS_RESET_KEY=Ctrl-R
+GIT_FUZZY_STATUS_DISCARD_KEY=Ctrl-U
+
+ITERM2_SQUELCH_MARK=1
+source ~/.iterm2_shell_integration.zsh
+
+unset NODE_ENV
+
+# Load up default ssh key if not loaded
+if ! ssh-add -L | grep -q "$USER"; then
+  echo "🚨 No ssh key detected"
+  ssh-add ~/.ssh/id_rsa
+fi
+
+# pnpm
+export PNPM_HOME="/Users/martin.valentino/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

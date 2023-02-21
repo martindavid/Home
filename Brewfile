@@ -8,5 +8,4 @@ brew "luajit", args: ['HEAD']
 brew "neovim", args: ['HEAD']
 brew "tmux"
 brew "tmuxinator"
-brew "postgresql"
 brew "fzf"
