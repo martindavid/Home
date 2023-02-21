@@ -13,8 +13,15 @@ export DISABLE_AUTO_TITLE=true
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="spaceship"
 
+SPACESHIP_PROMPT_ASYNC=false
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=false
+SPACESHIP_PROMPT_PREFIXES_SHOW=true
+SPACESHIP_PROMPT_SUFFIXES_SHOW=true
+
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -154,7 +161,11 @@ unset NODE_ENV
 # Load up default ssh key if not loaded
 if ! ssh-add -L | grep -q "$USER"; then
   echo "🚨 No ssh key detected"
-  ssh-add ~/.ssh/id_rsa
+  if [ -s "$HOME/.ssh/id_rsa" ]; then
+    ssh-add ~/.ssh/id_rsa
+  else
+    ssh-add ~/.ssh/id_ed25519
+  fi
 fi
 
 # pnpm

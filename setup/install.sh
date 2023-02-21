@@ -68,15 +68,17 @@ setup_ohmyzsh() {
   fi
 
   SPACESHIP_THEME_DIR="$HOME/.oh-my-zsh/custom/themes/spaceship-prompt"
+  OMZ_CUSTOM_DIR="$HOME/.oh-my-zsh/custom"
   if [ ! -d "$SPACESHIP_THEME_DIR" ]; then
     echo "Theme folder not exist"
-    run_command 'git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1'
+    run_command 'git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$OMZ_CUSTOM_DIR/themes/spaceship-prompt" --depth=1'
+    run_command 'ln -s "$OMZ_CUSTOM_DIR/spaceship-prompt/spaceship.zsh-theme" "$OMZ_CUSTOM_DIR/themes/spaceship.zsh-theme"'
   fi
-  run_command 'ln -s ~/Documents/Github/Home/dotfiles/.zshrc ~/'
+  run_command 'ln -s $HOME/Documents/Github/Home/dotfiles/.zshrc ~/'
 }
 
 setup_lvim() {
-  if which lvim &>/dev/null; then
+  if ! which lvim &>/dev/null; then
     echo "Lunarvim is not exist"
     run_command "bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y"
     run_command "rm -rf $HOME/.config/lvim"
