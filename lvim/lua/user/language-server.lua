@@ -57,7 +57,6 @@ formatters.setup {
   },
   {
     command = "prettierd",
-    extra_args = { "--print-with", "100" },
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "svelte" }
   },
   {

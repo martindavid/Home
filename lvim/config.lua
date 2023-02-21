@@ -47,7 +47,6 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
-
 reload("user.options")
 reload("user.telescope")
 reload("user.bindings")
@@ -91,6 +90,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
+lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
