@@ -9,3 +9,4 @@ brew "neovim", args: ['HEAD']
 brew "tmux"
 brew "tmuxinator"
 brew "fzf"
+brew "pyenv"

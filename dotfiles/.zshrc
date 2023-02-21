@@ -130,7 +130,6 @@ fi
 
 # Custom exec
 source ~/.token-env
-source ~/.fonts/*.sh
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
