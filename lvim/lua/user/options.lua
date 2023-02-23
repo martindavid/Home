@@ -30,3 +30,9 @@ lvim.builtin.nvimtree.setup.view.number = true
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 lvim.builtin.terminal.active = true
 lvim.builtin.terminal.direction = "horizontal"
+
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  pcall(telescope.load_extension, "live_grep_args")
+  -- any other extensions loading
+end

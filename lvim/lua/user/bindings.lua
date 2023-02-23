@@ -12,11 +12,4 @@ vim.keymap.set("i", "jk", "<Esc>")
 lvim.keys.normal_mode["q"] = ":quit<cr>"
 
 lvim.builtin.terminal.open_mapping = [[<c-t>]]
-vim.builtin.which_key.mappings.u = { "<CMD>UndotreeToggle<CR><CMD>UndotreeFocus<CR>", "Undo tree" }
-
-lvim.builtin.which_key.mappings.s.t = {
-  function()
-    require("telescope").extensions.live_grep_args()
-  end,
-  "Search Text with Args",
-}
+lvim.builtin.which_key.mappings["U"] = { "<CMD>UndotreeToggle<CR><CMD>UndotreeFocus<CR>", "Undo tree" }
