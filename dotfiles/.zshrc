@@ -7,11 +7,6 @@ export ZSH=$HOME/.oh-my-zsh
 export TERM="screen-256color"
 
 export DISABLE_AUTO_TITLE=true
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="spaceship"
 
 SPACESHIP_PROMPT_ASYNC=false
 SPACESHIP_PROMPT_ADD_NEWLINE=true
@@ -88,17 +83,6 @@ alias gs="git fuzzy status"
 alias gd="git fuzzy diff"
 alias glog="git fuzzy log"
 
-
-# Powerlevel9k config
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv nvm dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-POWERLEVEL9K_VIRTUALENV_BACKGROUND=107
-POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
-POWERLEVEL9K_VCS_FOREGROUND='021'
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="\n "
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX=">"
-
 # Pyenv Config
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export WORKON_HOME=$HOME/.virtualenvs
@@ -172,3 +156,5 @@ fi
 export PNPM_HOME="/Users/martin.valentino/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+eval "$(starship init zsh)"

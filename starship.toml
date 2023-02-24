@@ -1,0 +1,16 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 1000
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[aws]
+disabled = true
+
+[cmd_duration]
+min_time = 500
+format = 'run [$duration](bold yellow)'

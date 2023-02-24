@@ -88,6 +88,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "toml"
 }
 
 lvim.builtin.treesitter.auto_install = true

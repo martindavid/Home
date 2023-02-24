@@ -1,13 +1,23 @@
+tap "homebrew/cask"
+
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "~/Applications", require_sha: true
+
 brew "direnv"
 brew "git"
 brew "exa"
 brew "gpg"
 brew "asdf"
+brew "pnpm"
 brew "ripgrep"
+brew "fzf"
 brew "luajit", args: ['HEAD']
 brew "neovim", args: ['HEAD']
 brew "tmux"
 brew "tmuxinator"
-brew "fzf"
 brew "pyenv"
 brew "pyenv-virtualenv"
+brew "starship"
+
+cask "maccy"
+cask "brave-browser"

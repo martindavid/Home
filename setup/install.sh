@@ -10,6 +10,14 @@ source "$(dirname "$0")/utils.sh"
 readonly use_asdf="${USE_ASDF:-1}"
 
 install_brew_dependencies() {
+  which -s brew
+  if [[ $? != 0 ]] ; then
+    # Install Homebrew
+    run_command 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  else
+    run_command "brew update"
+  fi
+
 	if ! brew bundle check &>/dev/null; then
 		run_command "brew bundle install"
     run_command "brew install --cask hiddenbar"
