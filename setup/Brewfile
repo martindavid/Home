@@ -1,11 +1,15 @@
+tap "homebrew/core"
+tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "buo/cask-upgrade"
 
 # set arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", require_sha: true
+cask_args appdir: "~/Applications"
 
 brew "direnv"
 brew "git"
 brew "exa"
+brew "bat"
 brew "gpg"
 brew "asdf"
 brew "pnpm"
@@ -19,5 +23,8 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "starship"
 
+cask "iterm2"
 cask "maccy"
 cask "brave-browser"
+cask "spotify"
+cask "vlc"
