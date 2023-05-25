@@ -9,6 +9,37 @@ lvim.plugins = {
   "nvim-telescope/telescope-live-grep-args.nvim",
   "tpope/vim-surround",
   {
+    "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup {
+          suggestion = {
+            auto_trigger = true,
+            keymap = {
+              accept = "<C-CR>",
+              accept_line = "<C-Space>",
+              next = "<C-n>",
+              prev = "<C-p>",
+              dismiss = "<C-c>"
+            }
+          }
+          -- filetypes = {
+          --   javascript = true,
+          --   typescript = true,
+          --   javascriptreact = true,
+          --   typescriptreact = true,
+          --   ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
+          -- },
+        }
+      end, 100)
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua", "nvim-cmp" },
+  },
+  {
     "ggandor/leap.nvim",
     config = function()
       require('leap').add_default_mappings()
@@ -60,7 +91,8 @@ lvim.plugins = {
         filter = {
           fzf = {
             action_for = { ["ctrl-s"] = "split" },
-            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " }, },
+            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+          },
         },
       })
     end,
@@ -77,10 +109,8 @@ lvim.plugins = {
         textobjects = {
           select = {
             enable = true,
-
             -- Automatically jump forward to textobj, similar to targets.vim
             lookahead = true,
-
             keymaps = {
               -- You can use the capture groups defined in textobjects.scm
               ["af"] = "@function.outer",
@@ -101,7 +131,7 @@ lvim.plugins = {
             -- mapping query_strings to modes.
             selection_modes = {
               ['@parameter.outer'] = 'v', -- charwise
-              ['@function.outer'] = 'V', -- linewise
+              ['@function.outer'] = 'V',  -- linewise
               ['@class.outer'] = '<c-v>', -- blockwise
             },
             -- If you set this to `true` (default is `false`) then any textobject is

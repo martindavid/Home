@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/Documents/Github/git-fuzzy/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/sbin/:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Documents/Github/git-fuzzy/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/sbin/:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export TERM="screen-256color"
@@ -29,7 +28,6 @@ plugins=(
   direnv
   zsh-autosuggestions
   zsh-interactive-cd
-  poetry
   asdf
   gitfast
 )
@@ -51,7 +49,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-alias nvim="lvim"
+# alias nvim="lvim"
 alias zshconfig="lvim ~/.zshrc"
 alias ohmyzsh="lvim ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
@@ -151,10 +149,5 @@ if ! ssh-add -L | grep -q "$USER"; then
     ssh-add ~/.ssh/id_ed25519
   fi
 fi
-
-# pnpm
-export PNPM_HOME="/Users/martin.valentino/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 eval "$(starship init zsh)"
