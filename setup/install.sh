@@ -56,10 +56,10 @@ install_asdf_dependencies() {
 	run_command "asdf install"
 	run_command "asdf reshim"
   run_command "asdf global nodejs 16.16.0"
-  run_command "asdf global yarn 1.22.11"
-  run_command "asdf global ruby 2.6.6"
+  run_command "asdf global yarn 1.22.19"
+  run_command "asdf global ruby 3.1.2"
   run_command "asdf global golang 1.14"
-  run_command "asdf global rust 1.65.0"
+  run_command "asdf global rust 1.69.0"
 }
 
 setup_ohmyzsh() {

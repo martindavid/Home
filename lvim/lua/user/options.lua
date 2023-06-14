@@ -4,7 +4,7 @@ lvim.format_on_save = {
   pattern = { "*.lua", "*.ts", "*.tsx", "*.js", "*.jsx", "*.css", ".scss" },
   timeout = 1000,
 }
-lvim.colorscheme = "onedark_dark"
+lvim.colorscheme = "tokyonight-night"
 vim.opt.relativenumber = true
 vim.opt.showmatch = true
 vim.opt.textwidth = 120

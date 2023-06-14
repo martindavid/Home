@@ -33,8 +33,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
-
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -141,7 +139,7 @@ source ~/.iterm2_shell_integration.zsh
 unset NODE_ENV
 
 # Load up default ssh key if not loaded
-if ! ssh-add -L | grep -q "$USER"; then
+if ! ssh-add -L | grep -q "martin.david.siagian@gmail.com"; then
   echo "🚨 No ssh key detected"
   if [ -s "$HOME/.ssh/id_rsa" ]; then
     ssh-add ~/.ssh/id_rsa
@@ -151,3 +149,5 @@ if ! ssh-add -L | grep -q "$USER"; then
 fi
 
 eval "$(starship init zsh)"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

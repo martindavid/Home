@@ -1,5 +1,4 @@
 lvim.plugins = {
-  "olimorris/onedarkpro.nvim",
   "lewis6991/impatient.nvim",
   "wakatime/vim-wakatime",
   "mbbill/undotree",
@@ -8,6 +7,12 @@ lvim.plugins = {
   "mg979/vim-visual-multi",
   "nvim-telescope/telescope-live-grep-args.nvim",
   "tpope/vim-surround",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   {
     "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
