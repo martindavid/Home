@@ -63,7 +63,7 @@ alias ls="exa -G --color auto --icons -a -s type"
 alias dockersize='docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}" | sort -k 2 -h'
 # delete known_host for cultureamp ssh server
 alias rmkh="sed -i '' '/cultureamp\.io/d' $HOME/.ssh/known_hosts"
-alias checkstandardrb='bundle exec standardrb --fix $(git diff --name-only --diff-filter=d `git merge-base origin/master HEAD` | grep -E "(\.rb|^Gemfile)$" )'
+alias checkstandardrb='bundle exec standardrb --fix $(git diff --name-only --diff-filter=d `git merge-base origin/main HEAD` | grep -E "(\.rb|^Gemfile)$" )'
 alias ".."="cd .."
 alias "..."="cd ../.."
 alias "...."="cd ../../.."
@@ -151,3 +151,7 @@ fi
 eval "$(starship init zsh)"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/martin.valentino/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

@@ -5,7 +5,7 @@
 -- }
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
+lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
 -- lvim.lsp.installer.setup.ui.border = "rounded"
 -- lvim.lsp.installer.setup.ui.keymaps = {
 --     uninstall_server = "d",
@@ -30,6 +30,22 @@ local grammarly_opts = {
 require("lvim.lsp.manager").setup("grammarly", grammarly_opts)
 
 require("lvim.lsp.manager").setup("marksman", {})
+
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tailwindcss" })
+require("lvim.lsp.manager").setup("tailwindcss", {
+  cmd = { "tailwindcss-language-server", "--stdio" },
+  settings = {
+    tailwindCSS = {
+      classAttributes = {
+        "class",
+        "className",
+        "ngClass",
+        "classNameOverride"
+      },
+    },
+  },
+})
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
