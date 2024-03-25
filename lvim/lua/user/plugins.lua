@@ -8,6 +8,12 @@ lvim.plugins = {
   "nvim-telescope/telescope-live-grep-args.nvim",
   "tpope/vim-surround",
   {
+    "fedepujol/move.nvim",
+    config = function()
+      require('move').setup({})
+    end
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
