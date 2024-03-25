@@ -77,9 +77,9 @@ lvim.builtin.lualine.sections.lualine_y = {
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
-  "c",
   "javascript",
   "json",
+  "c",
   "lua",
   "python",
   "typescript",
@@ -88,7 +88,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
-  "toml"
+  "toml",
+  "ruby"
 }
 
 lvim.builtin.treesitter.auto_install = true
@@ -97,10 +98,13 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- generic LSP settings
 reload("user.language-server")
-
 -- Additional Plugins
 reload("user.plugins")
 
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  command = "setlocal relativenumber",
+})
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.json", "*.jsonc" },
@@ -111,6 +115,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("InsertEnter", {
   command = "setlocal norelativenumber",
 })
-vim.api.nvim_create_autocmd("InsertLeave", {
-  command = "setlocal relativenumber",
-})
+
+require('lspconfig').solargraph.setup {
+  cmd = { "solargraph", "stdio" }
+}

@@ -6,11 +6,11 @@
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
 lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
--- lvim.lsp.installer.setup.ui.border = "rounded"
--- lvim.lsp.installer.setup.ui.keymaps = {
---     uninstall_server = "d",
---     toggle_server_expand = "o",
--- }
+lvim.lsp.installer.setup.ui.border = "rounded"
+lvim.lsp.installer.setup.ui.keymaps = {
+  uninstall_server = "d",
+  toggle_server_expand = "o",
+}
 
 -- ---@usage disable automatic installation of servers
 -- lvim.lsp.installer.setup.automatic_installation = false
@@ -20,14 +20,6 @@ lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = true
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
-
-local grammarly_opts = {
-  -- init_options = { clientId = 'client_UJZv2cfRGqbaZro3H7Rpzf', },
-  init_options = { clientId = 'client_BaDkMgx4X19X9UxxYRCXZo' },
-  filetypes = { "markdown", "markdownx", "mdx" },
-  cmd = { "grammarly-languageserver", "--stdio" }
-}
-require("lvim.lsp.manager").setup("grammarly", grammarly_opts)
 
 require("lvim.lsp.manager").setup("marksman", {})
 
@@ -46,6 +38,8 @@ require("lvim.lsp.manager").setup("tailwindcss", {
     },
   },
 })
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
