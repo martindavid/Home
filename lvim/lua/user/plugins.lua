@@ -19,37 +19,37 @@ lvim.plugins = {
     priority = 1000,
     opts = {},
   },
-  {
-    "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup {
-          suggestion = {
-            auto_trigger = true,
-            keymap = {
-              accept = "<C-CR>",
-              accept_line = "<C-Space>",
-              next = "<C-n>",
-              prev = "<C-p>",
-              dismiss = "<C-c>"
-            }
-          }
-          -- filetypes = {
-          --   javascript = true,
-          --   typescript = true,
-          --   javascriptreact = true,
-          --   typescriptreact = true,
-          --   ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
-          -- },
-        }
-      end, 100)
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua", "nvim-cmp" },
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   event = { "VimEnter" },
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup {
+  --         suggestion = {
+  --           auto_trigger = true,
+  --           keymap = {
+  --             accept = "<C-CR>",
+  --             accept_line = "<C-Space>",
+  --             next = "<C-n>",
+  --             prev = "<C-p>",
+  --             dismiss = "<C-c>"
+  --           }
+  --         }
+  --         -- filetypes = {
+  --         --   javascript = true,
+  --         --   typescript = true,
+  --         --   javascriptreact = true,
+  --         --   typescriptreact = true,
+  --         --   ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
+  --         -- },
+  --       }
+  --     end, 100)
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   after = { "copilot.lua", "nvim-cmp" },
+  -- },
   {
     "ggandor/leap.nvim",
     config = function()
