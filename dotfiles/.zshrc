@@ -60,6 +60,7 @@ alias tx="tmuxinator"
 alias pcli="perform-cli"
 alias ll="exa -bhl --color always --icons -a -s type"
 alias ls="exa -G --color auto --icons -a -s type"
+alias lg="lazygit"
 alias dockersize='docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}" | sort -k 2 -h'
 # delete known_host for cultureamp ssh server
 alias rmkh="sed -i '' '/cultureamp\.io/d' $HOME/.ssh/known_hosts"
