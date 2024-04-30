@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR="lvim"
+export EDITOR="nvim"
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
@@ -48,8 +48,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # alias nvim="lvim"
-alias zshconfig="lvim ~/.zshrc"
-alias ohmyzsh="lvim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
 alias gitfolder="cd ~/Documents/Github"
 alias rmstopcontainer="docker ps -aq --no-trunc -f status=exited | xargs docker rm"
