@@ -14,5 +14,8 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.git.blame-nvim" },
+  { import = "astrocommunity.git.gitlinker-nvim" },
+  { import = "astrocommunity.completion.copilot-cmp" },
   -- import/override with your plugins folder
 }

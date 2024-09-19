@@ -58,8 +58,8 @@ alias kraken='open -na GitKraken --args -p "$(git rev-parse --show-toplevel)"'
 alias vtop="vtop --theme monokai"
 alias tx="tmuxinator"
 alias pcli="perform-cli"
-alias ll="exa -bhl --color always --icons -a -s type"
-alias ls="exa -G --color auto --icons -a -s type"
+alias ll="eza -bhl --color always --icons -a -s type"
+alias ls="eza -G --color auto --icons -a -s type"
 alias lg="lazygit"
 alias dockersize='docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}" | sort -k 2 -h'
 # delete known_host for cultureamp ssh server
