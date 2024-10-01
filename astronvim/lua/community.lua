@@ -12,7 +12,7 @@ return {
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.ruby" },
+  -- { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.git.blame-nvim" },
   { import = "astrocommunity.git.gitlinker-nvim" },
