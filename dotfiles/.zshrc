@@ -114,7 +114,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 30% --border'
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # tabtab source for packages
 # uninstall by removing these lines
