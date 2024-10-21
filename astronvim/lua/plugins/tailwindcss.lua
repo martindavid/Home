@@ -29,10 +29,10 @@ return {
                     "class",
                     "className",
                     "ngClass",
-                    "classNameOverride"
-                  }
-                }
-              }
+                    "classNameOverride",
+                  },
+                },
+              },
             },
           },
         },
@@ -44,7 +44,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed =
-          require("astrocore").list_insert_unique(opts.ensure_installed, { "tailwindcss-language-server" })
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "tailwindcss-language-server" })
     end,
   },
   {
