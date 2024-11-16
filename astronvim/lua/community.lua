@@ -18,5 +18,6 @@ return {
   { import = "astrocommunity.git.gitlinker-nvim" },
   { import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
+  { import = "astrocommunity.recipes.vscode" },
   -- import/override with your plugins folder
 }
