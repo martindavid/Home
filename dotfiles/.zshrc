@@ -138,8 +138,9 @@ if ! ssh-add -L | grep -q "martin.david.siagian@gmail.com"; then
   echo "🚨 No ssh key detected"
   if [ -s "$HOME/.ssh/id_rsa" ]; then
     ssh-add ~/.ssh/id_rsa
-  else
+  else  
     ssh-add ~/.ssh/id_ed25519
+    ssh-add id_ed25519_personal 
   fi
 fi
 
