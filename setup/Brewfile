@@ -25,6 +25,7 @@ brew "tmuxinator"
 # brew "pyenv-virtualenv"
 brew "starship"
 brew "tokei"
+brew "pidof"
 
 cask "iterm2"
 cask "spotify"
