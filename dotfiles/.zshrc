@@ -140,7 +140,7 @@ if ! ssh-add -L | grep -q "martin.david.siagian@gmail.com"; then
     ssh-add ~/.ssh/id_rsa
   else  
     ssh-add ~/.ssh/id_ed25519
-    ssh-add id_ed25519_personal 
+    ssh-add ~/.ssh/id_ed25519_personal 
   fi
 fi
 
