@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="/opt/atlassian/bin:/opt/homebrew/bin:/usr/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export TERM="screen-256color"
+
 
 export DISABLE_AUTO_TITLE=true
 
@@ -158,3 +160,5 @@ export PATH="/Users/mvalentino/Documents/Github/git-fuzzy/bin:$PATH"
 kitty-reload() {
     kill -SIGUSR1 $(pidof kitty)
 }
+
+export PATH="/Users/mvalentino/atlassian/atlassian-frontend-monorepo/afm-tools/path:$PATH"
