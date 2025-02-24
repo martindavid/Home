@@ -70,6 +70,7 @@ C = 'secondary'
 D = 'secondary'
 E = 'secondary'
 F = 'secondary'
+S = 'secondary'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
